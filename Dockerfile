@@ -19,7 +19,7 @@ USER rcwds
 CMD [ \
     "serve", "webdav", \
     "--config", "rclone.conf", \
-    "remote:.", \
+    "myremote:", \
     "--read-only", \
     "--user", "$USER", \
     "--pass", "$PASS", \
