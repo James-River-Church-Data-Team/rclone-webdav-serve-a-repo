@@ -18,7 +18,7 @@ USER rcwds
 # Serve cwd over WebDAV with rclone
 ENTRYPOINT ""
 CMD [ \
-    "/bin/sh", "-c", \
+    "exec", \
     "rclone", "serve", "webdav", \
     "--config", "rclone.conf", \
     "myremote:", \
