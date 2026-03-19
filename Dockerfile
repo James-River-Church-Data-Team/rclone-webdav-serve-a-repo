@@ -1,6 +1,5 @@
 FROM rclone/rclone
 WORKDIR /usr/local/app/
-COPY rclone.conf /usr/local/app/
 
 EXPOSE ${PORT}
 
@@ -9,6 +8,8 @@ ARG REPO_URL
 ENV REPO=$REPO_URL
 RUN apk add --no-cache git
 RUN git clone $REPO .
+
+COPY rclone.conf /usr/local/app/
 
 # Set up a separate user so the container doesn't run as root
 RUN addgroup -S rcwds && adduser -S rcwds -G rcwds -D -H
