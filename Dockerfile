@@ -17,4 +17,4 @@ USER rcwds
 
 # Serve cwd over WebDAV with rclone
 ENTRYPOINT []
-CMD "rclone serve webdav --config rclone.conf myremote: --read-only --user $USER --pass $PASS --addr 0.0.0.0:$PORT"
+CMD rclone serve webdav --config rclone.conf myremote: --read-only --user $USER --pass $PASS --addr 0.0.0.0:$PORT
