@@ -16,14 +16,5 @@ RUN addgroup -S rcwds && adduser -S rcwds -G rcwds -D -H
 USER rcwds
 
 # Serve cwd over WebDAV with rclone
-ENTRYPOINT ""
-CMD [ \
-    "exec", \
-    "rclone", "serve", "webdav", \
-    "--config", "rclone.conf", \
-    "myremote:", \
-    "--read-only", \
-    "--user", "$USER", \
-    "--pass", "$PASS", \
-    "--addr", "0.0.0.0:$PORT" \
-]
+ENTRYPOINT []
+CMD "rclone serve webdav --config rclone.conf myremote: --read-only --user $USER --pass $PASS --addr 0.0.0.0:$PORT"
